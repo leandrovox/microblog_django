@@ -5,3 +5,6 @@ from django.http import HttpResponse
 def index(request):
 	dicionario_contexto = {'msgnegrito': "Testando fonte em negrito..."}
 	return render(request, 'django/index.html', dicionario_contexto)
+
+def sobre(reques):
+	return render(request, 'django/sobre.html', {})
