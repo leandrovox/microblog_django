@@ -6,5 +6,5 @@ def index(request):
 	dicionario_contexto = {'msgnegrito': "Testando fonte em negrito..."}
 	return render(request, 'django/index.html', dicionario_contexto)
 
-def sobre(reques):
-	return render(request, 'django/sobre.html', {})
+def sobre(request):
+	return render(request, 'django/sobre.html', {'opa': 'apenas teste'})
