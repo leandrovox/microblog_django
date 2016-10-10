@@ -19,4 +19,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^django_app/', include('django_app.urls')),
+    url(r'^django_app/view/(?P<slug>[^\.]+).html', 'django_app.views.ver_post', name='ver_post_blog'),
+    	url(r'^django_app/categoria(?P<slug>[^\.]+).html', 'django_app.views.ver_categoria', name='ver_categoria_blog'),
 ]
