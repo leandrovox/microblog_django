@@ -1,6 +1,6 @@
 from django.shortcuts import render, render_to_response, get_object_or_404
 from django.http import HttpResponse
-from django.models import Blog, Categoria
+from django_app.models import Blog, Categoria
 # Create your views here.
 
 def index(request):

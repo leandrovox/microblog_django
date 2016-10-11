@@ -1,0 +1,21 @@
+{% extends 'django\base.html' %}
+
+{% block head_title %} Vendo categoria {{categoria.titulo}} {% endblock %}
+
+{% block title %} {{categoria.titulo}} {% endblock %}
+
+{% block content %}
+	{% if posts %}
+		<ul>
+			{% for post in posts %}
+				<li><a href="{{post.get_url_absoluta}}"></a> {{post.titulo}} </li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>Não existem posts para essa categoria</p>
+	{% endelse %}
+	
+	<p>
+		<a href="/django_app"><- Home</a>
+	</p>
+{% endblock %}

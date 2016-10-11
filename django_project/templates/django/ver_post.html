@@ -1,0 +1,15 @@
+{% extends 'django\base.html' %}
+{% block head_title %} {{post.titulo}} {% endblock %}
+{% block title %} {{post.titulo}} {% endblock %}
+
+{% block content %} 
+
+	<h3>
+		Categoria: <a href="{{post.categoria.get_url_absoluta}}">{{post.categoria.titulo}}</a>
+	</h3>
+	{{post.corpo}}
+	<p>
+		<a href="/django_app"><- Home</a>
+	</p>
+
+{% endblock %}
