@@ -3,13 +3,16 @@
 {% block title %} {{post.titulo}} {% endblock %}
 
 {% block content %} 
-
-	<h3>
-		Categoria: <a href="{{post.categoria.get_url_absoluta}}">{{post.categoria.titulo}}</a>
-	</h3>
+	<div class="well">
+		<h4>
+			Categoria: <a href="{{post.categoria.get_url_absoluta}}">{{post.categoria.titulo}}</a>
+		</h4>	
+		<h4>Postado em: {{post.data|date:"d/m/Y"}} </h4>
+	</div>
+	
 	{{post.corpo}}
 	<p>
-		<a href="/django_app"><- Home</a>
+		<a href="/django_app"><- Voltar para Home</a>
 	</p>
 
 {% endblock %}

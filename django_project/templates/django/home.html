@@ -2,26 +2,21 @@
 {% block title %} Welcome to the DJANGO	{% endblock %}
 
 {% block content %}
-	<h2>Categorias</h2>
-	{% if categorias %}
-		<ul>
-			{% for categoria in categorias %}
-				<li><a href="{{categoria.get_url_absoluta}}"> {{categoria.titulo}} </a></li>
-			{% endfor %}
-
-		</ul>
-	{% else %}
-		<p>Não há nenhuma categoria adicionada.</p>
-	{% endif %}
-
-	<h2>Posts</h2>
-	{% if posts %}
-		<ul>
+	{% if posts %}	
 			{% for post in posts %}
-				<li><a href="{{post.get_url_absoluta}}">{{post.titulo}}</a>  </li>
-			{% endfor %}
-		</ul>
+				<h2>
+					<a href="{{post.get_url_absoluta}}">{{post.titulo}}</a> 
+				</h2>
+				<p class="lead">
+					por <a href="#">Pombo</a>
+				</p><span class="glyphicon glyphicon-time"></span> Postado em {{post.data|date:"d/m/Y"}} às 10:00PM
+				<p>
+					{{post.corpo}}	
+				</p>
+				<a href="{{post.get_url_absoluta}}" class="btn btn-primary"> Leia Mais <span class="glyphicon glyphicon-chevron-right"></span></a>
+			{% endfor %}	
 	{% else %}
 		<p>Não há nenhum post adicionado</p>
 	{% endif %}
+	
 {% endblock %}	
